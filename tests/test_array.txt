@@ -1,0 +1,28 @@
+int arr1[3], c, arr2[10];
+char a, arr3[4], arr4[10];
+
+
+int add3(int a, int b, int c)
+{
+    int arr[2];
+    int res;
+    arr[0] = a;
+    arr[1] = b;
+    res = arr[0] + arr[1] + c;
+    return (res);
+}
+
+void test_array
+{
+    int arr5[5], arr6[6];
+    char arr7[6];
+
+    arr1[1] = 1;
+    printf("test array");
+    printf("Expect 10, result is:", add3(2, 3, 5));
+}
+
+void main()
+{
+    test_array;
+}

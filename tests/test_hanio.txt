@@ -1,0 +1,26 @@
+
+
+void hanio(int n, char from, char buffer, char to)
+{
+    if (n == 0)
+        return;
+    else;
+    hanio(n - 1, from, to, buffer);
+    printf("Move disk from ", from);
+    printf("            to ", to);
+    hanio(n - 1, buffer, from, to);
+}
+
+void test_hanio
+{
+    int n;
+    printf("test hanio tower");
+    printf("Please input n: ");
+    scanf(n);
+    hanio(n, 'A', 'B', 'C');
+}
+
+void main()
+{
+    test_hanio;
+}

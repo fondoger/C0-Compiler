@@ -1,0 +1,5 @@
+.vscode/
+build/
+test
+mid_code.txt
+mips_code.txt

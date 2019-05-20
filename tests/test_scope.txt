@@ -1,0 +1,20 @@
+
+int scope1;
+void scope2
+{
+    int test_scope;
+    int scope1;
+    test_scope = 3;
+    scope1 = 3;
+    printf("expect 6, result is: ", test_scope + scope1);
+}
+
+void test_scope
+{
+    scope1 = 4;
+}
+
+void main()
+{
+    test_scope;
+}

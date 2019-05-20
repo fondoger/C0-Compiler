@@ -1,0 +1,11 @@
+
+void test_error_switch {
+    switch(32) {
+        case 1:
+
+    }
+
+}
+void main() {
+    test_error_switch();
+}

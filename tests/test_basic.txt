@@ -1,0 +1,125 @@
+const char c1 = '1', c2 = 'A';
+const char c3 = '_', c4 = '+';
+const int c5 = -1000, c6 = 0999;
+int v1, v2, v3, v4, v5;
+int v6, v7, v8, v9, v10;
+void test_const_definition {
+    printf("test const definition");
+    printf("expect 1=", c1);
+    printf("expect A=", c2);
+    printf("expect -1000=", c5);
+    printf("expect 999=", c6);
+}
+
+
+void do_nothing {
+    ;
+}
+void return_in_advance {
+    if (2 > 1) return;
+    else {  }
+    printf("return error");
+}
+int return_integer_1 {
+    return(1);
+}
+int return_receive(int receive) {
+    return(receive);
+}
+int two_sum(int a, int b) {
+    int c;
+    c = a + b;
+    return(c);
+}
+int test_recursive_function_call(int arg1) {
+    if (arg1 == 10) {
+        return(10);
+    } else {
+        ;
+    }
+    return(test_recursive_function_call(arg1 + 1));
+}
+void test_functions {
+    printf("testing functions...");
+    do_nothing;
+    return_in_advance;
+    v1 = return_integer_1;
+    v2 = return_integer_1 + two_sum(1, 2);
+    printf("expect 1=", v1);
+    printf("expect 3=", v2);
+    if (test_recursive_function_call(0) == 10) {
+        printf("recursive function call OK(1/1)");
+    } else {
+        printf("recursive function call error");
+    }
+}
+
+void test_expressions {
+    printf("test expresions");
+    v1 = -1 + 2;
+    v2 = 1 + 2 * (1 + 1) ;
+    v3 = 1 + 2 * two_sum(1, 1);
+    printf("expect 1=", 1);
+    printf("expect 5=", v2);
+    printf("expect 5=", v3);
+}
+
+void test_statement_if {
+    printf("testing if");
+    if (1) printf("if OK(1/3)");
+    else printf("if error", 1);
+    if (1 - 1 > 2) printf("if error", 2);
+    else printf("if OK(2/3)");
+    if (2 >= 2) {
+        if (3 != 4) printf("if OK(3/3)");
+        else printf("if error", 3);
+    } else {
+        printf("if error", 4);
+    }
+}
+void test_statement_do_while {
+    int count;
+    printf("Tesing do while");
+    count = 0;
+    do {
+        count = count + 1;
+    } while (count != 100);
+    if (count == 100) printf("do while OK(1/2)");
+    else printf("do while error", 1);
+    do printf("do while OK(2/2)");
+    while (1 == 2)
+}
+void test_statement_switch {
+    printf("testing switch");
+    switch ('a') {
+        case 'b': printf("switch error", 1);
+        case 'a': printf("switch OK(1/2)");
+        default: printf("switch error", 2);
+    }
+    switch (100) {
+        case 1: printf("swith error", 3);
+        default: printf("switch OK(2/2)");
+    }
+}
+void test_statement_read_write {
+    printf("testing scanf, please input a integer:");
+    scanf(v1);
+    printf("Here is what we received:", v1);
+    printf("Another output with no string argument:");
+    printf(v1);
+}
+void test_statements {
+    printf("test statements");
+    test_statement_read_write;
+    test_statement_if;
+    test_statement_do_while;
+    test_statement_switch;
+}
+
+
+void main() {
+    test_const_definition;
+    test_expressions;
+    test_statements;
+    test_functions;
+}

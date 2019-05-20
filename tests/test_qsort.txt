@@ -1,0 +1,72 @@
+int nums[10000];
+
+int qsort_judge(int i, int j, int num_j, int num_pivot) {
+    if (i < j) {
+        if (num_j >= num_pivot) {
+            return(1);
+        } else {
+            return(0);
+        }
+    } else {
+        return(0);
+    }
+}
+
+void qsort(int low, int high)
+{
+    int i, j, pivot;
+    if (low >= high) return;
+    else;
+    i = low;
+    j = high;
+    pivot = nums[i];
+    do {
+        if (qsort_judge(i, j, nums[j], pivot)) {
+            do j = j - 1;
+            while(qsort_judge(i, j, nums[j], pivot));
+        } else;
+
+        nums[i] = nums[j];
+        if (qsort_judge(i, j, pivot, nums[i])) {
+            do i = i + 1;
+            while(qsort_judge(i, j, pivot, nums[i]));
+        } else;
+
+        nums[j] = nums[i];
+    } while (i < j);
+    nums[i] = pivot;
+    qsort(low, i - 1);
+    qsort(i + 1, high);
+}
+
+void test_qsort
+{
+    int i;
+    int n;
+    int t;
+    printf("test quick sort");
+    printf("Please input n(0 < n <= 10000): ");
+    scanf(n);
+    i = 0;
+    if (i < n) {
+        do {
+            scanf(t);
+            nums[i] = t;
+            i = i + 1;
+        } while (i < n);
+    } else;
+    qsort(0, n - 1);
+    i = 0;
+    if (i < n) {
+        do {
+            printf(" ", nums[i]);
+            i = i + 1;
+        } while (i < n);
+    } else;
+}
+
+void main()
+{
+    test_qsort;
+}
+

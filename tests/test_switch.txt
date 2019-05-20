@@ -1,0 +1,27 @@
+void test_switch {
+    char ch;
+    int n;
+    n = 99;
+    printf("Please input a char(might be '0', '1', '2'): ");
+    scanf(ch);
+    printf("Please input another number(might be 0 ~ 3)");
+    scanf(n);
+    switch(ch) {
+        case '0':
+
+                      switch(n) {
+                          case 0: printf("GOOD");
+                          case 1: printf("just so so");
+                          default: printf("BAD!");
+                      }
+        case '1': printf("Not good!");
+        case '2': printf("Not very good!");
+        default:  printf("Very not good!");
+    }
+}
+
+
+void main()
+{
+    test_switch;
+}

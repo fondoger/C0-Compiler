@@ -1,0 +1,34 @@
+
+
+int add(int a, int b)
+{
+    return (a + b);
+}
+
+int mul(int a, int b)
+{
+    return (a * b);
+}
+
+void test_func_call
+{
+    int n;
+    printf("test function call");
+    n = add(
+            add(1, mul(2, 3)),
+            mul(
+                add(1, 2),
+                add(
+                    add(1, 1),
+                    add(2, 2)
+                )
+            )
+        );
+
+    printf("expect 25, result ", n);
+}
+
+void main()
+{
+    test_func_call;
+}

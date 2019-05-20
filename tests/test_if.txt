@@ -1,0 +1,107 @@
+void test_if
+{
+    int a, b, c, d, e;
+    char ch;
+    a = 0;
+    b = 1;
+    c = 2;
+    d = 2;
+    e = -'A';
+    ch = 'A';
+
+    printf("test if condition");
+    if (0) {
+        printf("BAD_1");
+    } else {
+        printf("GOOD_1");
+    }
+    if (1)
+        printf("GOOD_2");
+    else
+        printf("BAD_2");
+    if (a) {
+        printf("BAD_4");
+    } else {
+        printf("GOOD_4");
+    }
+    if (b) {
+        printf("GOOD_5");
+    } else {
+        printf("BAD_5");
+    }
+    if (b > 0) {
+        printf("GOOD_6");
+    } else {
+        printf("BAD_6");
+    }
+    if (a == 0) {
+        printf("GOOD_7");
+    } else {
+        printf("BAD_7");
+    }
+    if (a == 1) {
+        printf("bad_8");
+    } else {
+        printf("good_8");
+    }
+    if (a >= 0) {
+        printf("good_10");
+    } else {
+        printf("bad_10");
+    }
+    if (a < b ) {
+        printf("good_11");
+    } else {
+        printf("bad_11");
+    }
+    if (b < b) {
+        printf("bad_12");
+    } else {
+        printf("good_12");
+    }
+    if (c == d) {
+        printf("good_13");
+    } else {
+        printf("bad_13");
+    }
+    if (c <= d) {
+        printf("good_14");
+    } else {
+        printf("bad_14");
+    }
+    if (c >= d) {
+        printf("good_15");
+    } else {
+        printf("bad_15");
+    }
+    if (a + b == b) {
+        printf("good_16");
+    } else {
+        printf("bad_16");
+    }
+    if (b + c != 3) {
+        printf("bad_17");
+    } else {
+        printf("good_17");
+    }
+    if (c + d == d + c) {
+        printf("good_18");
+    } else {
+        printf("bad_18");
+    }
+    if (7 + 'f' + 9) {
+        printf("good_19");
+    } else {
+        printf("bad_19");
+    }
+    if (a + b + c + d > e) {
+        printf("good_20");
+    } else {
+        printf("bad_20");
+    }
+}
+
+void main()
+{
+    test_if;
+}

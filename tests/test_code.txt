@@ -1,0 +1,263 @@
+int nums[100];
+int arr1[3], c, arr2[10];
+char a, arr3[4], arr4[10];
+int scope1;
+
+int qsort_judge(int i, int j, int num_j, int num_pivot) {
+    if (i < j) {
+        if (num_j >= num_pivot) {
+            return(1);
+        } else {
+            return(0);
+        }
+    } else {
+        return(0);
+    }
+}
+
+void qsort(int low, int high)
+{
+    int i, j, pivot;
+    if (low >= high) return;
+    else;
+    i = low;
+    j = high;
+    pivot = nums[i];
+    do {
+        if (qsort_judge(i, j, nums[j], pivot)) {
+            do j = j - 1;
+            while(qsort_judge(i, j, nums[j], pivot));
+        } else;
+
+        nums[i] = nums[j];
+        if (qsort_judge(i, j, pivot, nums[i])) {
+            do i = i + 1;
+            while(qsort_judge(i, j, pivot, nums[i]));
+        } else;
+
+        nums[j] = nums[i];
+    } while (i < j);
+    nums[i] = pivot;
+    qsort(low, i - 1);
+    qsort(i + 1, high);
+}
+
+void test_qsort
+{
+    int i;
+    int n;
+    int t;
+    printf("test quick sort");
+    printf("Please input n(0 < n <= 100): ");
+    scanf(n);
+    i = 0;
+    if (i < n) {
+        do {
+            scanf(t);
+            nums[i] = t;
+            i = i + 1;
+        } while (i < n);
+    } else;
+    qsort(0, n - 1);
+    i = 0;
+    if (i < n) {
+        do {
+            printf(" ", nums[i]);
+            i = i + 1;
+        } while (i < n);
+    } else;
+}
+
+void test_switch {
+    char ch;
+    int n;
+    n = 99;
+    printf("Please input a char(might be '0', '1', '2'): ");
+    scanf(ch);
+    printf("Please input another number(might be 0 ~ 3)");
+    scanf(n);
+    switch(ch) {
+        case '0':
+
+                      switch(n) {
+                          case 0: printf("GOOD");
+                          case 1: printf("just so so");
+                          default: printf("BAD!");
+                      }
+        case '1': printf("Not good!");
+        case '2': printf("Not very good!");
+        default:  printf("Very not good!");
+    }
+}
+int add(int a, int b)
+{
+    return (a + b);
+}
+
+int mul(int a, int b)
+{
+    return (a * b);
+}
+
+void test_func_call
+{
+    int n;
+    printf("test function call");
+    n = add(
+            add(1, mul(2, 3)),
+            mul(
+                add(1, 2),
+                add(
+                    add(1, 1),
+                    add(2, 2)
+                )
+            )
+        );
+
+    printf("expect 25, result ", n);
+}
+
+int add3(int a, int b, int c)
+{
+    int arr[2];
+    int res;
+    arr[0] = a;
+    arr[1] = b;
+    res = arr[0] + arr[1] + c;
+    return (res);
+}
+
+void test_array
+{
+    int arr5[5], arr6[6];
+    char arr7[6];
+
+    arr1[1] = 1;
+    printf("test array");
+    printf("Expect 10, result is:", add3(2, 3, 5));
+}
+void hanio(int n, char from, char buffer, char to)
+{
+    if (n == 0)
+        return;
+    else;
+    hanio(n - 1, from, to, buffer);
+    printf("Move disk from ", from);
+    printf("            to ", to);
+    hanio(n - 1, buffer, from, to);
+}
+
+void test_hanio
+{
+    int n;
+    printf("test hanio tower");
+    printf("Please input n: ");
+    scanf(n);
+    hanio(n, 'A', 'B', 'C');
+}
+void test_if
+{
+    int a, b, c, d, e;
+    char ch;
+    a = 0;
+    b = 1;
+    c = 2;
+    d = 2;
+    e = -'A';
+    ch = 'A';
+
+    printf("test if condition");
+    if (1)
+        printf("GOOD_2");
+    else
+        printf("BAD_2");
+    if (a) {
+        printf("BAD_4");
+    } else {
+        printf("GOOD_4");
+    }
+    if (b) {
+        printf("GOOD_5");
+    } else {
+        printf("BAD_5");
+    }
+    if (a == 0) {
+        printf("GOOD_7");
+    } else {
+        printf("BAD_7");
+    }
+    if (a == 1) {
+        printf("bad_8");
+    } else {
+        printf("good_8");
+    }
+    if (a >= 0) {
+        printf("good_10");
+    } else {
+        printf("bad_10");
+    }
+    if (a < b ) {
+        printf("good_11");
+    } else {
+        printf("bad_11");
+    }
+    if (b < b) {
+        printf("bad_12");
+    } else {
+        printf("good_12");
+    }
+    if (c <= d) {
+        printf("good_14");
+    } else {
+        printf("bad_14");
+    }
+    if (c >= d) {
+        printf("good_15");
+    } else {
+        printf("bad_15");
+    }
+    if (a + b == b) {
+        printf("good_16");
+    } else {
+        printf("bad_16");
+    }
+    if (b + c != 3) {
+        printf("bad_17");
+    } else {
+        printf("good_17");
+    }
+    if (7 + 'f' + 9) {
+        printf("good_19");
+    } else {
+        printf("bad_19");
+    }
+}
+int fib(int n)
+{
+    if (n == 0) {
+        return(1);
+    } else if (n == 1) {
+        return(1);
+    } else {
+        return(fib(n - 1) + fib(n - 2));
+    }
+}
+
+void test_fib
+{
+    int n;
+    printf("test Fibonacci");
+    printf("Please input n: ");
+    scanf(n);
+    printf("result is: ", fib(n));
+}
+void main()
+{
+    test_if;
+    test_func_call;
+    test_array;
+    test_switch;
+    test_fib;
+    test_hanio;
+    test_qsort;
+}
