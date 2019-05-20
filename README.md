@@ -22,15 +22,22 @@
 * `g++`命令可用
 * `make`命令可用
 
+**克隆**
+
+``bash
+git clone https://github.com/fondoger/C0-Compiler
+cd C0-Compiler
+```
+
 **编译**
 
-```
+```bash
 make                        # 生成可执行文件, test 就是我们的编译器
 ```
 
 **运行**
 
-```
+```bash
 make run                    # 方法1: 使用默认源文件(hello_word.txt)
 ./test hello_world.txt      # 方法2: 使用指定源文件
 ```
