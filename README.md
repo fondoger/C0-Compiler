@@ -24,7 +24,7 @@
 
 **克隆**
 
-``bash
+```bash
 git clone https://github.com/fondoger/C0-Compiler
 cd C0-Compiler
 ```
